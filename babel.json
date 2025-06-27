@@ -13,6 +13,7 @@
       "localPath": "C:\\Users\\Gaurav\\Documents\\BabelWorkspaceBackups\\babel-2024-02-12.backup.zip",
       "cloudProviders": [],
       "id": "47dfdac5-02ec-4125-8d7f-7635f5545b4c"
+<<<<<<< HEAD
     },
     {
       "timestamp": 1731949085526,
@@ -25,6 +26,8 @@
       "localPath": "C:\\Users\\Gaurav\\Documents\\BabelWorkspaceBackups\\babel-2024-12-26.backup.zip",
       "cloudProviders": [],
       "id": "bebc2488-b5f8-487e-96b5-c248dc396dbd"
+=======
+>>>>>>> e6a6a14aec66d7986daadeaa815102dbfae2efcb
     }
   ],
   "activity": []
