@@ -1034,3 +1034,145 @@ section .container {
 .credits a:hover {
   color: #fff;
 }
+
+/* 3D Elements Support & Enhancements */
+.count-box, .resume-item, .info-box, .about-me .img-fluid, .about-me .content {
+  transform-style: preserve-3d;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease !important;
+  will-change: transform;
+}
+
+/* Make inner elements pop out for a true 3D effect */
+.count-box i, .count-box p, .count-box a, 
+.resume-item h4, .resume-item h5, .resume-item p,
+.info-box i, .info-box h3, .info-box p {
+  transform: translateZ(30px);
+}
+
+.count-box, .resume-item, .info-box {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(25, 25, 25, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+/* Glowing effects on hover matching particle color */
+.count-box:hover, .resume-item:hover, .info-box:hover {
+  box-shadow: 0 10px 40px rgba(0, 255, 90, 0.15);
+  border-color: rgba(0, 255, 90, 0.3);
+}
+
+.about-me .img-fluid {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 255, 90, 0.1);
+}
+
+/* --- AI Engineer Theme Additions --- */
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.glitch::before {
+  left: 3px;
+  text-shadow: -2px 0 rgba(0, 255, 90, 0.7);
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+.glitch::after {
+  left: -3px;
+  text-shadow: -2px 0 rgba(0, 150, 255, 0.7);
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+@keyframes glitch-anim {
+  0% { clip: rect(100px, 9999px, 83px, 0); transform: skew(0.5deg); }
+  20% { clip: rect(6px, 9999px, 83px, 0); transform: skew(-0.5deg); }
+  40% { clip: rect(100px, 9999px, 85px, 0); }
+  60% { clip: rect(110px, 9999px, 4px, 0); }
+  80% { clip: rect(10px, 9999px, 50px, 0); }
+  100% { clip: rect(117px, 9999px, 126px, 0); transform: skew(0.5deg); }
+}
+@keyframes glitch-anim-2 {
+  0% { clip: rect(65px, 9999px, 100px, 0); }
+  20% { clip: rect(80px, 9999px, 4px, 0); }
+  40% { clip: rect(122px, 9999px, 34px, 0); }
+  60% { clip: rect(21px, 9999px, 11px, 0); }
+  80% { clip: rect(110px, 9999px, 42px, 0); }
+  100% { clip: rect(11px, 9999px, 106px, 0); }
+}
+
+#header h2.terminal-text {
+  font-family: "Courier New", Courier, monospace !important;
+  color: #00ff5a !important;
+  text-shadow: 0 0 10px rgba(0, 255, 90, 0.4);
+  font-size: 20px !important;
+  background: rgba(0, 20, 0, 0.5);
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 90, 0.2);
+  display: inline-block;
+  margin-top: 15px;
+  backdrop-filter: blur(4px);
+}
+
+.terminal-prompt {
+  color: #a8a8a8;
+  margin-right: 5px;
+}
+
+.typed-cursor {
+  color: #00ff5a;
+  text-shadow: 0 0 10px rgba(0, 255, 90, 0.8);
+}
+
+.ai-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  padding: 12px 30px;
+  background: rgba(0, 255, 90, 0.1);
+  border: 1px solid #00ff5a;
+  color: #00ff5a !important;
+  border-radius: 50px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 255, 90, 0.15);
+  text-decoration: none;
+}
+
+.ai-btn:hover {
+  background: #00ff5a;
+  color: #000 !important;
+  box-shadow: 0 0 30px rgba(0, 255, 90, 0.6);
+  transform: translateY(-3px);
+}
+
+/* --- Transition Gradient for Name --- */
+#header h1 a.glitch {
+  background: linear-gradient(90deg, #18d26e, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Ensure glitch pseudo-elements remain solid */
+.glitch::before {
+  -webkit-text-fill-color: rgba(24, 210, 110, 0.8) !important;
+}
+.glitch::after {
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+}
